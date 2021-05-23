@@ -1,0 +1,7 @@
+This is a test mail.
+
+It sent with python smtplib.
+
+You have to write here your message.
+
+Thanks for attention!
