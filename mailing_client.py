@@ -7,6 +7,7 @@
 # Then we can run this program.
 # Program will direct us to functions.
 
+# imports
 import smtplib
 from email import encoders
 from email.mime.text import MIMEText
@@ -14,7 +15,7 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 
 
-def file_attacher(file_path, msg):
+def file_adder(file_path, msg):
     filename = file_path
     attachment = open(filename, 'rb')
 
@@ -46,7 +47,7 @@ def mail_sender(sender_login, sender_password, receiver, subject, message_path, 
     msg.attach(MIMEText(message, 'plain'))
 
     if file_path != '':
-        msg = file_attacher(file_path=file_path, msg=msg)
+        msg = file_adder(file_path=file_path, msg=msg)
 
     text = msg.as_string()
     server.sendmail(sender_login, receiver, text)
